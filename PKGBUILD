@@ -1,5 +1,5 @@
 pkgname='bootsplash-theme-bgrt'
-pkgver=0.1
+pkgver=0.2
 pkgrel=1
 pkgdesc="BGRT bootsplash theme"
 url="https://github.com/t1meshift/bootsplash-theme-bgrt"

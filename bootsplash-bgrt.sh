@@ -17,6 +17,7 @@ fi
 LOGO=logo.bmp
 LOGO_WIDTH=$(identify $LOGO | cut -d " " -f 3 | cut -d x -f 1)
 LOGO_HEIGHT=$(identify $LOGO | cut -d " " -f 3 | cut -d x -f 2)
+LOGO_OFFSET=$(cat /sys/firmware/acpi/bgrt/yoffset)
 
 THROBBER=spinner.gif
 THROBBER_WIDTH=$(identify $THROBBER | head -1 | cut -d " " -f 3 | \
@@ -43,7 +44,8 @@ convert -alpha remove \
 	--picture \
 	--pic_width $LOGO_WIDTH \
 	--pic_height $LOGO_HEIGHT \
-	--pic_position 0 \
+	--pic_position 0x11 \
+	--pic_position_offset $LOGO_OFFSET \
 	--blob logo.rgb \
 	--picture \
 	--pic_width $THROBBER_WIDTH \
